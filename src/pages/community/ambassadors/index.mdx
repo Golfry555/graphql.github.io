@@ -1,0 +1,29 @@
+---
+description: An introduction to the GraphQL Ambassador Program
+---
+
+import { Button } from "../../../app/conf/_components/button"
+import { AmbassadorGrid } from "../../../components/ambassador-grid"
+import { ambassadors } from "../../../components/info-card/ambassador-data"
+
+# GraphQL Ambassador Program 
+
+Ambassadors are trusted go-to community leaders driven by a passion for GraphQL projects and strive to nurture the growing GraphQL community through collaboration, education and outreach.
+
+Interested in becoming an Ambassador?
+
+<Button
+  href="./apply"
+  className="mx-auto my-6 !block"
+>
+  Learn more about the Ambassador Program
+</Button>
+
+## Meet your GraphQL Ambassadors!
+
+<AmbassadorGrid ambassadors={ambassadors.filter(ambassador => !ambassador.emeritus)} />
+
+## Ambassador Emeriti
+
+Our Ambassador Emeriti are former Ambassadors whose active terms have ended. As members of our first Ambassador cohort, they helped establish the program and show what it could become. We celebrate and thank them for the time, experience, and care they have shared with the program and the wider GraphQL community. Their contributions have helped make GraphQL stronger, more welcoming, and more connected.
+<AmbassadorGrid ambassadors={ambassadors.filter(ambassador => ambassador.emeritus)} emeritus />

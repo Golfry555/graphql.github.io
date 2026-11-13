@@ -1,0 +1,1132 @@
+import { ReactNode } from "react"
+import {
+  Bluesky2Icon,
+  FacebookIcon,
+  GitHubIcon,
+  GlobeIcon,
+  LinkedInIcon,
+  MediumIcon,
+  ThreadsIcon,
+  TwitterIcon,
+  YouTube2Icon,
+} from "../../icons"
+
+export interface AmbassadorTag {
+  label: string
+  url: string
+  icon?: ReactNode
+}
+
+export interface AmbassadorEvent {
+  name: string
+  url: string
+}
+
+export interface Ambassador {
+  label: string
+  imageUrl: string
+  alt: string
+  tags: AmbassadorTag[]
+  emeritus?: boolean
+  term?: string
+  location?: {
+    name: string
+    flag: string
+  }
+  organizes?: AmbassadorEvent[]
+  askMeAbout?: string[]
+}
+
+export const ambassadors202509: Ambassador[] = [
+  {
+    label: "Artur Czemiel",
+    imageUrl: "https://github.com/aexol.png",
+    alt: "Artur Czemiel",
+    location: {
+      name: "Poland",
+      flag: "🇵🇱",
+    },
+    askMeAbout: ["GraphQL Editor", "GraphQL Zeus", "schema design"],
+    tags: [
+      {
+        label: "Bluesky",
+        url: "https://bsky.app/profile/arturcz.bsky.social",
+        icon: <Bluesky2Icon className="size-5" />,
+      },
+      {
+        label: "GitHub",
+        url: "https://github.com/aexol/",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/arturczemiel/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Donna Zhou",
+    imageUrl: "/img/ambassadors/donna-zhou.jpg",
+    alt: "Donna Zhou",
+    emeritus: true,
+    term: "2025-2026",
+    location: {
+      name: "Australia",
+      flag: "🇦🇺",
+    },
+    askMeAbout: ["GraphQL Java", "open source"],
+    tags: [
+      {
+        label: "GitHub",
+        url: "https://github.com/dondonz",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://linkedin.com/in/donnazhou",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Dotan Simha",
+    imageUrl: "https://github.com/dotansimha.png",
+    alt: "Dotan Simha",
+    location: {
+      name: "Israel",
+      flag: "🇮🇱",
+    },
+    askMeAbout: ["GraphQL Yoga", "federation"],
+    tags: [
+      {
+        label: "GitHub",
+        url: "https://github.com/dotansimha/",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "X",
+        url: "https://x.com/dotansimha",
+        icon: <TwitterIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Eddy Nguyen",
+    imageUrl: "https://github.com/eddeee888.png",
+    alt: "Eddy Nguyen",
+    location: {
+      name: "Australia",
+      flag: "🇦🇺",
+    },
+    askMeAbout: ["GraphQL Code Generator", "type safety"],
+    tags: [
+      {
+        label: "GitHub",
+        url: "https://github.com/eddeee888",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/eddeee888/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+      {
+        label: "X",
+        url: "https://x.com/eddeee888",
+        icon: <TwitterIcon className="size-5" />,
+      },
+      {
+        label: "YouTube",
+        url: "https://www.youtube.com/@eddeee888",
+        icon: <YouTube2Icon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Erik Wrede",
+    imageUrl: "https://github.com/erikwrede.png",
+    alt: "Erik Wrede",
+    location: {
+      name: "Germany",
+      flag: "🇩🇪",
+    },
+    organizes: [
+      {
+        name: "GraphQL Amsterdam",
+        url: "https://www.meetup.com/amsterdam-graphql-meetup",
+      },
+    ],
+    askMeAbout: ["Python GraphQL", "Strawberry GraphQL", "GraphQL & AI"],
+    tags: [
+      {
+        label: "GitHub",
+        url: "https://github.com/erikwrede/",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/erikwrede",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Itamar Kestenbaum",
+    imageUrl: "/img/ambassadors/itamar-kestenbaum.jpg",
+    alt: "Itamar Kestenbaum",
+    location: {
+      name: "United States",
+      flag: "🇺🇸",
+    },
+    askMeAbout: ["error handling", "GraphQL at scale", "nullability"],
+    tags: [
+      {
+        label: "Facebook",
+        url: "https://www.facebook.com/profile.php?id=504330120",
+        icon: <FacebookIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/itamarkestenbaum/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+      {
+        label: "Threads",
+        url: "https://www.threads.com/@itamarok",
+        icon: <ThreadsIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Jamie Barton",
+    imageUrl: "/img/ambassadors/jamie-barton.jpg",
+    alt: "Jamie Barton",
+    location: {
+      name: "United Kingdom",
+      flag: "🇬🇧",
+    },
+    askMeAbout: [
+      "developer tooling",
+      "GraphQL at the edge",
+      "GraphQL education",
+    ],
+    tags: [
+      {
+        label: "GitHub",
+        url: "https://github.com/notrab",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/notrab/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+      {
+        label: "X",
+        url: "https://x.com/notrab",
+        icon: <TwitterIcon className="size-5" />,
+      },
+      {
+        label: "Website",
+        url: "https://notrab.dev",
+        icon: <GlobeIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Jeff Auriemma",
+    imageUrl: "/img/ambassadors/jeff-auriemma.jpg",
+    alt: "Jeff Auriemma",
+    location: {
+      name: "United States",
+      flag: "🇺🇸",
+    },
+    organizes: [
+      {
+        name: "GraphQL Virtual",
+        url: "https://guild.host/graphql-virtual",
+      },
+    ],
+    askMeAbout: ["GraphQL clients", "GraphQL governance", "schema design"],
+    tags: [
+      {
+        label: "Bluesky",
+        url: "https://bsky.app/profile/jeff.auriemma.xyz",
+        icon: <Bluesky2Icon className="size-5" />,
+      },
+      {
+        label: "GitHub",
+        url: "https://github.com/bignimbus",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/jeffreyauriemma/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+      {
+        label: "Website",
+        url: "https://jdauriemma.com/",
+        icon: <GlobeIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Jem Gillam",
+    imageUrl: "https://github.com/jemgillam.png",
+    alt: "Jem Gillam",
+    location: {
+      name: "United Kingdom",
+      flag: "🇬🇧",
+    },
+    organizes: [
+      {
+        name: "London GraphQL",
+        url: "https://guild.host/london-graphql",
+      },
+    ],
+    askMeAbout: ["GraphQL governance", "open source"],
+    tags: [
+      {
+        label: "Bluesky",
+        url: "https://bsky.app/profile/jem.graphile.org",
+        icon: <Bluesky2Icon className="size-5" />,
+      },
+      {
+        label: "GitHub",
+        url: "https://github.com/jemgillam",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/jemgillam/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Jordan Eldredge",
+    imageUrl: "https://github.com/captbaritone.png",
+    alt: "Jordan Eldredge",
+    location: {
+      name: "United States",
+      flag: "🇺🇸",
+    },
+    askMeAbout: ["Grats", "Relay", "nullability"],
+    tags: [
+      {
+        label: "GitHub",
+        url: "https://github.com/captbaritone",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/jordaneldredge",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+      {
+        label: "Threads",
+        url: "https://www.threads.com/@captbaritone",
+        icon: <ThreadsIcon className="size-5" />,
+      },
+      {
+        label: "Website",
+        url: "https://jordaneldredge.com/",
+        icon: <GlobeIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Jovi De Croock",
+    imageUrl: "https://github.com/jovidecroock.png",
+    alt: "Jovi De Croock",
+    emeritus: true,
+    term: "2025-2026",
+    location: {
+      name: "Belgium",
+      flag: "🇧🇪",
+    },
+    askMeAbout: ["gql.tada", "urql"],
+    tags: [
+      {
+        label: "GitHub",
+        url: "https://github.com/jovidecroock",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/jovidecroock/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+      {
+        label: "X",
+        url: "https://x.com/jovidecroock",
+        icon: <TwitterIcon className="size-5" />,
+      },
+      {
+        label: "Website",
+        url: "https://www.jovidecroock.com/blog/",
+        icon: <GlobeIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Marc-Andre Giroux",
+    imageUrl: "https://github.com/xuorig.png",
+    alt: "Marc-Andre Giroux",
+    emeritus: true,
+    term: "2025-2026",
+    location: {
+      name: "Canada",
+      flag: "🇨🇦",
+    },
+    askMeAbout: ["API architecture", "GraphQL at scale", "production GraphQL"],
+    tags: [
+      {
+        label: "BlueSky",
+        url: "https://bsky.app/profile/xuorig.bsky.social",
+        icon: <Bluesky2Icon className="size-5" />,
+      },
+      {
+        label: "GitHub",
+        url: "https://github.com/xuorig",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/magiroux/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+      {
+        label: "Website",
+        url: "https://magiroux.com/",
+        icon: <GlobeIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Michael Watson",
+    imageUrl: "https://github.com/michael-watson.png",
+    alt: "Michael Watson",
+    emeritus: true,
+    term: "2025-2026",
+    location: {
+      name: "United States",
+      flag: "🇺🇸",
+    },
+    askMeAbout: ["enterprise GraphQL", "GraphQL & AI", "schema design"],
+    tags: [
+      {
+        label: "BlueSky",
+        url: "https://bsky.app/profile/michael-watson.bsky.social",
+        icon: <Bluesky2Icon className="size-5" />,
+      },
+      {
+        label: "GitHub",
+        url: "https://github.com/michael-watson",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/michael-watson-%F0%9F%96%A5-85844442/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Patrick Arminio",
+    imageUrl: "https://github.com/patrick91.png",
+    alt: "Patrick Arminio",
+    location: {
+      name: "United Kingdom",
+      flag: "🇬🇧",
+    },
+    askMeAbout: ["Strawberry GraphQL", "code-first GraphQL, type safety"],
+    tags: [
+      {
+        label: "BlueSky",
+        url: "https://bsky.app/profile/patrick.wtf",
+        icon: <Bluesky2Icon className="size-5" />,
+      },
+      {
+        label: "GitHub",
+        url: "https://github.com/patrick91",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/patrickarminio/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Phil Pluckthun",
+    imageUrl: "https://github.com/kitten.png",
+    alt: "Phil Pluckthun",
+    emeritus: true,
+    term: "2025-2026",
+    location: {
+      name: "United Kingdom",
+      flag: "🇬🇧",
+    },
+    askMeAbout: ["gql.tada", "urql"],
+    tags: [
+      {
+        label: "BlueSky",
+        url: "https://bsky.app/profile/kitten.sh",
+        icon: <Bluesky2Icon className="size-5" />,
+      },
+      {
+        label: "GitHub",
+        url: "https://github.com/kitten",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "X",
+        url: "http://x.com/_philpl",
+        icon: <TwitterIcon className="size-5" />,
+      },
+      {
+        label: "Website",
+        url: "https://kitten.sh/",
+        icon: <GlobeIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Sarah Sanders",
+    imageUrl: "/img/ambassadors/sarah-sanders.jpg",
+    alt: "Sarah Sanders",
+    location: {
+      name: "United States",
+      flag: "🇺🇸",
+    },
+    organizes: [
+      {
+        name: "Philly GraphQL",
+        url: "https://luma.com/phillygraphql",
+      },
+    ],
+    askMeAbout: ["developer experience", "GraphQL education"],
+    tags: [
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/sarah-s-42913121a/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Stephen Spalding",
+    imageUrl: "https://github.com/fotoetienne.png",
+    alt: "Stephen Spalding",
+    location: {
+      name: "United States",
+      flag: "🇺🇸",
+    },
+    askMeAbout: ["GraphQL & AI", "GraphQL at scale", "nullability"],
+    tags: [
+      {
+        label: "GitHub",
+        url: "https://github.com/fotoetienne",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "X",
+        url: "https://x.com/stephenspalding",
+        icon: <TwitterIcon className="size-5" />,
+      },
+      {
+        label: "Website",
+        url: "http://stephenspalding.com/",
+        icon: <GlobeIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Taz Singh",
+    imageUrl: "https://github.com/tazsingh.png",
+    alt: "Taz Singh",
+    emeritus: true,
+    term: "2025-2026",
+    location: {
+      name: "United Kingdom",
+      flag: "🇬🇧",
+    },
+    askMeAbout: ["community building", "production GraphQL"],
+    tags: [
+      {
+        label: "GitHub",
+        url: "https://github.com/tazsingh",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "X",
+        url: "https://x.com/tazsingh",
+        icon: <TwitterIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Warren Day",
+    imageUrl: "/img/ambassadors/warren-day.jpeg",
+    alt: "Warren Day",
+    location: {
+      name: "United Kingdom",
+      flag: "🇬🇧",
+    },
+    askMeAbout: ["GraphQL Network Inspector", "debugging", "developer tooling"],
+    tags: [
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/warren-day-86b0a15a",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+      {
+        label: "YouTube",
+        url: "https://www.youtube.com/@overstacked_io",
+        icon: <YouTube2Icon className="size-5" />,
+      },
+    ],
+  },
+]
+
+export const ambassadors202512: Ambassador[] = [
+  {
+    label: "An Ngo",
+    imageUrl: "https://github.com/vliegveld5.png",
+    alt: "An Ngo",
+    location: {
+      name: "Netherlands",
+      flag: "🇳🇱",
+    },
+    organizes: [
+      {
+        name: "GraphQL Amsterdam",
+        url: "https://www.meetup.com/amsterdam-graphql-meetup",
+      },
+    ],
+    askMeAbout: ["enterprise GraphQL", "federation", "GraphQL at scale"],
+    tags: [
+      {
+        label: "GitHub",
+        url: "https://github.com/vliegveld5",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/vliegveld5/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Aurélien David",
+    imageUrl: "https://github.com/spyl94.png",
+    alt: "Aurélien David",
+    location: {
+      name: "France",
+      flag: "🇫🇷",
+    },
+    askMeAbout: ["API migration", "GraphQL education", "public APIs"],
+    tags: [
+      {
+        label: "GitHub",
+        url: "https://github.com/spyl94/",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/aurel-spyl/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+      {
+        label: "Twitter",
+        url: "https://x.com/spyl94",
+        icon: <TwitterIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Chanda Raj Kumar",
+    imageUrl: "/img/ambassadors/chanda-raj-kumar.jpg",
+    alt: "Chanda Raj Kumar",
+    location: {
+      name: "India",
+      flag: "🇮🇳",
+    },
+    organizes: [
+      {
+        name: "GraphQL Hyderabad",
+        url: "https://guild.host/graphql-hyderabad/",
+      },
+    ],
+    askMeAbout: ["GraphQL & AI", "GraphQL education"],
+    tags: [
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/chanda-raj-kumar-88799a1b3/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Derek Kuc",
+    imageUrl: "https://github.com/dariuszkuc.png",
+    alt: "Derek Kuc",
+    location: {
+      name: "United States",
+      flag: "🇺🇸",
+    },
+    askMeAbout: ["Apollo Federation", "GraphQL testing"],
+    tags: [
+      {
+        label: "Bluesky",
+        url: "https://bsky.app/profile/dkuc.bsky.social",
+        icon: <Bluesky2Icon className="size-5" />,
+      },
+      {
+        label: "GitHub",
+        url: "https://github.com/dariuszkuc",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/dkuc/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+      {
+        label: "Twitter",
+        url: "https://x.com/derek_kuc",
+        icon: <TwitterIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Gil Gardosh",
+    imageUrl: "https://github.com/gilgardosh.png",
+    alt: "Gil Gardosh",
+    location: {
+      name: "Israel",
+      flag: "🇮🇱",
+    },
+    askMeAbout: ["GraphQL Mesh", "API integration", "federation"],
+    tags: [
+      {
+        label: "GitHub",
+        url: "https://github.com/gilgardosh/",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/gil-gardosh-9a5088a5/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+      {
+        label: "Twitter",
+        url: "https://x.com/gilgardosh",
+        icon: <TwitterIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Giuseppe Abrignani",
+    imageUrl: "/img/ambassadors/giuseppe-abrignani.jpg",
+    alt: "Giuseppe Abrignani",
+    location: {
+      name: "Denmark",
+      flag: "🇩🇰",
+    },
+    askMeAbout: ["data modelling", "GraphQL at scale", "schema tooling"],
+    tags: [
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/giuseppeabrignani/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Jayant Acharya",
+    imageUrl: "/img/ambassadors/jayant-acharya.jpg",
+    alt: "Jayant Acharya",
+    location: {
+      name: "India",
+      flag: "🇮🇳",
+    },
+    organizes: [
+      {
+        name: "GraphQL Hyderabad",
+        url: "https://guild.host/graphql-hyderabad",
+      },
+    ],
+    askMeAbout: ["GraphQL education"],
+    tags: [
+      {
+        label: "GitHub",
+        url: "https://github.com/jayant99acharya",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/jayantacharya/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Laurin Quast",
+    imageUrl: " https://github.com/n1ru4l.png",
+    alt: "Laurin Quast",
+    location: {
+      name: "Germany",
+      flag: "🇩🇪",
+    },
+    askMeAbout: ["GraphQL Hive", "schema evolution"],
+    tags: [
+      {
+        label: "GitHub",
+        url: " https://github.com/n1ru4l",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/laurin-quast-a47b871b4/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+      {
+        label: "Twitter",
+        url: "https://x.com/n1rual",
+        icon: <TwitterIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Lenz Weber-Tronic",
+    imageUrl: "https://github.com/phryneas.png",
+    alt: "Lenz Weber-Tronic",
+    location: {
+      name: "Germany",
+      flag: "🇩🇪",
+    },
+    askMeAbout: ["Apollo Client", "GraphQL clients"],
+    tags: [
+      {
+        label: "Bluesky",
+        url: "https://bsky.app/profile/phry.dev",
+        icon: <Bluesky2Icon className="size-5" />,
+      },
+      {
+        label: "GitHub",
+        url: "https://github.com/phryneas",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/lenz-w-069040113/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+      {
+        label: "Website",
+        url: "https://phryneas.de/",
+        icon: <GlobeIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Rigin Oommen",
+    imageUrl: "https://github.com/riginoommen.png",
+    alt: "Rigin Oommen",
+    location: {
+      name: "India",
+      flag: "🇮🇳",
+    },
+    askMeAbout: ["API design", "developer experience", "schema evolution"],
+    tags: [
+      {
+        label: "GitHub",
+        url: "https://github.com/riginoommen",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/riginoommen/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Sabrina Wasserman",
+    imageUrl: "/img/ambassadors/sabrina-wasserman.jpg",
+    alt: "Sabrina Wasserman",
+    location: {
+      name: "United States",
+      flag: "🇺🇸",
+    },
+    askMeAbout: ["data consistency", "GraphQL clients", "pagination"],
+    tags: [
+      {
+        label: "GitHub",
+        url: "https://github.com/s3wasser",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/sabrina-wasserman-251045138/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Valentin Cocaud",
+    imageUrl: "https://github.com/EmrysMyrddin.png",
+    alt: "Valentin Cocaud",
+    location: {
+      name: "France",
+      flag: "🇫🇷",
+    },
+    askMeAbout: ["GraphQL Gateway", "GraphQL Mesh", "GraphQL Yoga"],
+    tags: [
+      {
+        label: "GitHub",
+        url: "https://github.com/EmrysMyrddin",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/valentin-cocaud/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+    ],
+  },
+]
+
+export const ambassadors202603: Ambassador[] = [
+  {
+    label: "Akshat Sharma",
+    imageUrl: "/img/ambassadors/akshat-sharma.jpg",
+    alt: "Akshat Sharma",
+    location: {
+      name: "India",
+      flag: "🇮🇳",
+    },
+    askMeAbout: ["developer advocacy", "GraphQL & AI"],
+    tags: [
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/akshat-sharma11/ ",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+      {
+        label: "Medium",
+        url: "https://medium.com/@akshat111111",
+        icon: <MediumIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Ayush More",
+    imageUrl: "/img/ambassadors/ayush-more.jpg",
+    alt: "Ayush More",
+    location: {
+      name: "India",
+      flag: "🇮🇳",
+    },
+    askMeAbout: ["the CNCF community, getting started with GraphQL"],
+    tags: [
+      {
+        label: "GitHub",
+        url: "https://github.com/Ayushmore1214",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/ayush-more-3b4154341/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+      {
+        label: "Website",
+        url: "https://heyyayush.hashnode.dev/",
+        icon: <GlobeIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Emily Goodwin",
+    imageUrl: "/img/ambassadors/emily-goodwin.jpg",
+    alt: "Emily Goodwin",
+    location: {
+      name: "Canada",
+      flag: "🇨🇦",
+    },
+    organizes: [
+      {
+        name: "GraphQL Toronto",
+        url: "https://guild.host/graphql-toronto",
+      },
+    ],
+    askMeAbout: ["caching", "federation", "GraphQL tooling"],
+    tags: [
+      {
+        label: "GitHub",
+        url: "https://github.com/egoodwinx",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/emily-y-goodwin/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Ivan Goncharov",
+    imageUrl: "https://github.com/IvanGoncharov.png",
+    alt: "Ivan Goncharov",
+    location: {
+      name: "Ukraine",
+      flag: "🇺🇦",
+    },
+    askMeAbout: ["GraphQL Voyager", "GraphQL specification", "GraphQL tooling"],
+    tags: [
+      {
+        label: "GitHub",
+        url: "https://github.com/IvanGoncharov",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/igoncharov/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+    ],
+  },
+]
+
+export const ambassadors202606: Ambassador[] = [
+  {
+    label: "Christian Ernst",
+    imageUrl: "/img/ambassadors/christian-ernst.jpg",
+    alt: "Christian Ernst",
+    location: {
+      name: "Netherlands",
+      flag: "🇳🇱",
+    },
+    organizes: [
+      {
+        name: "GraphQL Amsterdam",
+        url: "https://www.meetup.com/amsterdam-graphql-meetup",
+      },
+    ],
+    askMeAbout: ["enterprise GraphQL", "federation", "schema evolution"],
+    tags: [
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/christian-ernst11/ ",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Željko Kozina",
+    imageUrl: "/img/ambassadors/zeljko-kozina.jpg",
+    alt: "Željko Kozina",
+    location: {
+      name: "Ireland",
+      flag: "🇮🇪",
+    },
+    askMeAbout: ["Spring for GraphQL", "API design", "GraphQL & AI"],
+    tags: [
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/zkozina/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+      {
+        label: "Website",
+        url: "https://graphqlguy.com/blog/",
+        icon: <GlobeIcon className="size-5" />,
+      },
+    ],
+  },
+]
+
+export const ambassadors202609: Ambassador[] = [
+  {
+    label: "Eeshaan Sawant",
+    imageUrl: "https://github.com/eeshaanSA.png",
+    alt: "Eeshaan Sawant",
+    location: {
+      name: "India",
+      flag: "🇮🇳",
+    },
+    askMeAbout: [
+      "API governance",
+      "continuous delivery",
+      "developer communities",
+    ],
+    tags: [
+      {
+        label: "GitHub",
+        url: "https://github.com/eeshaanSA",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/sawanteeshaan/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+      {
+        label: "X",
+        url: "https://x.com/eeshaantwts",
+        icon: <TwitterIcon className="size-5" />,
+      },
+      {
+        label: "Website",
+        url: "https://eeshaans.substack.com/",
+        icon: <GlobeIcon className="size-5" />,
+      },
+    ],
+  },
+  {
+    label: "Jean Lucas Lima",
+    imageUrl: "https://github.com/jeanlucaslima.png",
+    alt: "Jean Lucas Lima",
+    location: {
+      name: "Brazil",
+      flag: "🇧🇷",
+    },
+    askMeAbout: [
+      "developer communities",
+      "distributed systems",
+      "GraphQL architecture",
+    ],
+    tags: [
+      {
+        label: "GitHub",
+        url: "https://github.com/jeanlucaslima",
+        icon: <GitHubIcon className="size-5" />,
+      },
+      {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/jeanlucaslima/",
+        icon: <LinkedInIcon className="size-5" />,
+      },
+      {
+        label: "Website",
+        url: "https://www.jeanlucas.me/",
+        icon: <GlobeIcon className="size-5" />,
+      },
+    ],
+  },
+]
+
+export const ambassadors = [
+  ...ambassadors202509,
+  ...ambassadors202512,
+  ...ambassadors202603,
+  ...ambassadors202606,
+  ...ambassadors202609,
+].sort((a, z) => a.label.localeCompare(z.label, "en-US"))

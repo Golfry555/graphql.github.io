@@ -1,0 +1,428 @@
+@import "./nextra-theme-docs.css";
+@import "tailwindcss/base";
+@import "tailwindcss/utilities";
+@import "tailwindcss/components";
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  --nextra-navbar-height: 64px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+.conf-hero {
+  background:
+    linear-gradient(
+      360deg,
+      #0e031c 10.63%,
+      #0e031c 10.65%,
+      rgba(14, 3, 28, 0) 166.98%
+    ),
+    url("/img/conf/graphql-conf-bg.png");
+  @apply text-white max-md:text-base;
+}
+
+.conf-hero-2025 {
+  background-color: rgba(0, 0, 0, 0.65);
+  background-image: url("/img/conf/graphql-conf-bg.png");
+  @apply text-white max-md:text-base;
+  background-position: right center;
+  background-blend-mode: darken;
+}
+
+.with-arrow:after {
+  @apply font-sans text-xl content-['_→'];
+  @apply transition-all duration-75 hover:ml-1;
+}
+
+footer {
+  @apply !bg-transparent;
+}
+
+.nextra-logo {
+  mask-image: linear-gradient(
+    60deg,
+    black 25%,
+    rgba(0, 0, 0, 0.2) 50%,
+    black 75%
+  );
+  mask-size: 400%;
+  mask-position: 0;
+
+  &:hover {
+    mask-position: 100%;
+    transition:
+      mask-position 1s ease,
+      -webkit-mask-position 1s ease;
+  }
+}
+
+/* should be fixed in Nextra 4 */
+._max-w-\[90rem\] {
+  @apply container;
+}
+
+.nextra-nav-container + ._max-w-\[90rem\] {
+  @apply px-0;
+}
+
+/* todo: add ability hide links with displaying sidebar in Nextra */
+.nextra-nav-container a[href="/graphql-js/"],
+.nextra-menu-mobile li:has(a[href="/graphql-js/"]) {
+  @apply hidden;
+}
+
+.nextra-nav-container > nav {
+  @apply gap-6;
+}
+
+/* Move nav links to the left */
+.nextra-nav-container nav {
+  @apply justify-start;
+
+  > a {
+    @apply first:mr-0 hover:!text-primary;
+  }
+
+  .nextra-search {
+    @apply ml-auto;
+
+    + * {
+      @apply max-md:ml-auto;
+    }
+  }
+}
+
+::selection {
+  @apply bg-pri-base/25 dark:bg-pri-light/50;
+}
+
+.donts-images ul {
+  gap: 0 3em;
+  @apply flex flex-wrap;
+
+  li {
+    @apply flex grow gap-3 md:basis-1/3;
+
+    div {
+      @apply grow;
+    }
+
+    img {
+      @apply h-20 bg-gray-200 p-4;
+    }
+  }
+}
+
+.dos > ul:first-child li:before {
+  background: url("/img/brand/do.svg");
+}
+
+.donts > ul:first-child li:before {
+  background: url("/img/brand/dont.svg");
+}
+
+.dos,
+.donts {
+  @apply mt-6;
+
+  > ul ul {
+    @apply mt-0;
+
+    li:before {
+      @apply grayscale;
+    }
+  }
+
+  & > ul:first-child li {
+    @apply relative list-none;
+
+    &:before {
+      @apply absolute -left-6 top-1 size-4 content-[''];
+    }
+  }
+}
+
+.code-page {
+  background:
+    linear-gradient(
+      303.75deg,
+      rgba(124, 124, 124, 0.2) 0.8%,
+      rgba(124, 124, 124, 0) 74.17%
+    ),
+    linear-gradient(0deg, #f8f8f8, #f8f8f8);
+}
+
+.dark .code-page {
+  background:
+    linear-gradient(
+      303.75deg,
+      rgba(124, 124, 124, 0.2) 0.8%,
+      rgba(124, 124, 124, 0) 74.17%
+    ),
+    linear-gradient(0deg, #1b1b1b, #1b1b1b);
+}
+
+.dark .blog-page {
+  background:
+    linear-gradient(
+      250.93deg,
+      rgba(115, 119, 125, 0.1),
+      rgba(115, 119, 125, 0)
+    ),
+    #18181b;
+}
+
+.blog-page {
+  background:
+    linear-gradient(
+      231.79deg,
+      rgba(225, 0, 152, 0.4) -23.67%,
+      rgba(225, 0, 152, 0) 25.9%
+    ),
+    linear-gradient(
+      113.65deg,
+      rgba(229, 53, 171, 0.4) -49.55%,
+      rgba(225, 0, 152, 0) 33.97%
+    ),
+    linear-gradient(180deg, #f3f4f6 0%, #fff 100%);
+}
+
+.conf-heading {
+  @apply text-balance text-3xl font-bold lg:text-[50px]/[4rem];
+}
+
+.conf-block {
+  @apply py-14 lg:py-24;
+}
+
+.tag {
+  @apply hover:border-transparent hover:bg-primary hover:text-white;
+  @apply rounded border border-current px-2.5 py-1 text-sm font-bold transition-colors;
+}
+
+.add,
+.remove {
+  @apply shadow-[2px_0_currentColor_inset];
+}
+
+.add {
+  @apply !bg-green-200 text-green-300 dark:!bg-green-200/50;
+
+  &::before {
+    @apply absolute start-1.5 content-['+'];
+  }
+}
+
+.remove {
+  @apply !bg-red-200 text-red-300 dark:!bg-red-200/50;
+
+  &::before {
+    @apply absolute start-1.5 content-['-'];
+  }
+}
+
+.index-button {
+  @apply rounded-md border border-current px-6 py-2.5 transition-colors;
+
+  &:hover,
+  &:focus {
+    @apply border-transparent bg-primary text-white;
+  }
+}
+
+.nextra-codeblocks {
+  div.nextra-code {
+    pre {
+      @apply h-full;
+    }
+
+    &:not(:first-child) {
+      @apply mt-0;
+
+      > div {
+        @apply first:rounded-l-none;
+      }
+
+      pre {
+        @apply rounded-l-none;
+      }
+    }
+
+    &:not(:last-child) {
+      > div {
+        @apply first:rounded-r-none;
+      }
+
+      pre {
+        @apply rounded-r-none;
+      }
+    }
+  }
+}
+
+.index-bg {
+  background:
+    linear-gradient(
+      303.75deg,
+      rgba(124, 124, 124, 0.2) 0.8%,
+      rgba(124, 124, 124, 0) 74.17%
+    ),
+    linear-gradient(0deg, #f8f8f8, #f8f8f8);
+
+  .dark & {
+    background:
+      linear-gradient(0deg, #111, #111),
+      linear-gradient(
+        303.75deg,
+        rgba(124, 124, 124, 0.2) 0.8%,
+        rgba(124, 124, 124, 0) 74.17%
+      );
+  }
+}
+
+.index-gradient {
+  @apply bg-gradient-to-b from-transparent to-primary/5 dark:to-primary/10;
+}
+
+.apiIndex {
+  @apply mt-6;
+}
+
+.apiIndex li {
+  margin: 0 0 5px 0;
+}
+
+.apiIndex li a {
+  color: inherit;
+  display: block;
+  position: relative;
+  text-decoration: none;
+}
+
+.apiIndex li a:hover::before {
+  @apply text-primary;
+  content: "#";
+  font-size: 16px;
+  left: -2em;
+  line-height: 20px;
+  position: absolute;
+}
+
+.apiIndex li {
+  @apply bg-white dark:bg-black;
+  @apply [box-shadow:inset_0_0_0_1px_#ddd,inset_4px_0_0_#ddd];
+  @apply dark:[box-shadow:inset_0_0_0_1px_#444,inset_4px_0_0_#444];
+  font-size: 13px;
+  padding: 7px 14px;
+}
+
+.learn-subtitle {
+  @apply mt-2;
+  @apply pb-2;
+  @apply border-neutral-200;
+  @apply border-b;
+  @apply text-xl;
+  @apply dark:border-neutral-700/80;
+}
+
+.gql-focus-visible,
+.gql-all-anchors-focusable a {
+  @apply focus-visible:gql-focus-outline;
+}
+
+.gql-container {
+  @apply mx-auto w-full max-w-[120rem];
+}
+
+.gql-section {
+  @apply px-4 py-8 lg:px-12 xl:gap-x-24 xl:px-24 3xl:px-[240px];
+}
+
+.gql-navbar-strip,
+.gql-conf-navbar-strip {
+  @apply relative [contain:paint] before:sticky before:top-0 before:z-[9] before:-mt-[var(--navbar-h)] before:block before:h-[var(--navbar-h)] before:w-full before:content-[''];
+}
+
+.gql-navbar-strip {
+  --navbar-h: var(--nextra-navbar-height);
+}
+
+.gql-radial-gradient {
+  background-image: radial-gradient(
+    ellipse at 50% 50%,
+    hsl(var(--color-neu-600)) 0%,
+    transparent 75%
+  );
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Reserve the scrollbar gutter so opening a navbar dropdown (which locks
+   body scroll via `overflow: hidden`) doesn't remove the scrollbar and shift
+   the whole page sideways by the scrollbar width. */
+html {
+  scrollbar-gutter: stable;
+}
+
+/* without this Headless UI breaks sticky navbar */
+html:has([role="listbox"][data-open]),
+html:has([role="menu"][data-open]) {
+  overflow: visible !important;
+}
+
+@supports (background: -webkit-named-image(i)) {
+  html {
+    /* Safari moves the fixed Navbar when overscrolling and it looks bad */
+    overscroll-behavior-y: none;
+  }
+}
+
+.flowchart {
+  --mermaid-node-fill: hsl(var(--color-neu-100));
+  --mermaid-node-stroke: hsl(var(--color-neu-200));
+  --mermaid-arrow: hsl(var(--color-neu-500));
+
+  margin: 1.5rem auto 0 auto;
+
+  & .label text,
+  span {
+    font-size: 14px !important;
+  }
+
+  & div:has(> .nodeLabel) {
+    display: unset !important;
+  }
+}
+
+.dark .flowchart {
+  --mermaid-node-fill: hsl(var(--color-neu-50) / 0.5);
+  --mermaid-node-stroke: hsl(var(--color-neu-100));
+  --mermaid-arrow: hsl(var(--color-neu-300));
+}
+
+.nextra-focus.subheading-anchor:focus-visible {
+  @apply gql-focus-outline after:text-neu-700 focus-visible:outline-offset-1;
+  box-shadow: none;
+}
